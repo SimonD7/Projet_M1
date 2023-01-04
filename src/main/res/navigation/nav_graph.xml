@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.myapplication.StartFragment"
+        android:label="Fragment1"
+        tools:layout="@layout/start" >
+        <action
+            android:id="@+id/action_start_to_voie"
+            app:destination="@id/voie_fragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/voie_fragment"
+        android:name="com.example.myapplication.VoieFragement"
+        android:label="Fragment2"
+        tools:layout="@layout/voie" >
+    <action
+        android:id="@+id/action_voie_to_numero"
+        app:destination="@id/numero_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numero_fragment"
+        android:name="com.example.myapplication.numeroFragement"
+        android:label="Fragment3"
+        tools:layout="@layout/numero" >
+        <action
+            android:id="@+id/action_numero_to_type"
+            app:destination="@id/typeFragement" />
+        <action
+            android:id="@+id/action_numero_to_voie"
+            app:destination="@id/voie_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/typeFragement"
+        android:name="com.example.myapplication.typeFragement"
+        android:label="Fragment4"
+        tools:layout="@layout/type" >
+        <action
+            android:id="@+id/action_type_to_surface"
+            app:destination="@id/surfaceFragement" />
+        <action
+            android:id="@+id/action_type_to_numero"
+            app:destination="@id/numero_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surfaceFragement"
+        android:name="com.example.myapplication.SurfaceFragement"
+        android:label="Fragment5"
+        tools:layout="@layout/surfarce" >
+        <action
+            android:id="@+id/action_surface_to_piece"
+            app:destination="@id/pieceFragement" />
+        <action
+            android:id="@+id/action_surface_to_type"
+            app:destination="@id/typeFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/pieceFragement"
+        android:name="com.example.myapplication.PieceFragement"
+        android:label="Fragment6"
+        tools:layout="@layout/piece" >
+        <action
+            android:id="@+id/action_piece_to_fin"
+            app:destination="@id/finFragement"/>
+        <action
+            android:id="@+id/action_piece_to_surface"
+            app:destination="@id/surfaceFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/finFragement"
+        android:name="com.example.myapplication.ResultFragement"
+        android:label="Fragment7"
+        tools:layout="@layout/result" >
+        <action
+            android:id="@+id/action_fin_to_voie"
+            app:destination="@id/voie_fragment" />
+    </fragment>
+</navigation>
