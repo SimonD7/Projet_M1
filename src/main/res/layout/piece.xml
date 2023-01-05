@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:hint="Saisissez le nombre de pièces."
-            android:inputType="numberDecimal"
+            android:inputType="number"
             />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

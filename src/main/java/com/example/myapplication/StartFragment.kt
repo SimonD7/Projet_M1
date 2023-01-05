@@ -8,13 +8,12 @@ import androidx.fragment.app.Fragment
 
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.StartBinding
-
-
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.myapplication.result.Result
 
 
 class StartFragment:Fragment(){
     private lateinit var binding : StartBinding
+
     override fun onCreateView (
         inflater : LayoutInflater,
         container : ViewGroup?,

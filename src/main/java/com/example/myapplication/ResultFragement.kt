@@ -8,15 +8,18 @@ import androidx.fragment.app.Fragment
 
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.ResultBinding
-import com.example.myapplication.databinding.StartBinding
-import com.example.myapplication.databinding.VoieBinding
-
-
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.myapplication.result.Result
 
 
 class  ResultFragement:Fragment(){
     private lateinit var binding :ResultBinding
+    private lateinit var Res : Result
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let { bundle ->
+            Res  = bundle.getParcelable("Result")!!
+        }
+    }
     override fun onCreateView (
         inflater : LayoutInflater,
         container : ViewGroup?,
@@ -28,10 +31,12 @@ class  ResultFragement:Fragment(){
 
     }
     override fun onViewCreated ( view : View , savedInstanceState : Bundle ?) {
+        binding.textView.text = Res.numero + Res.Piece + Res.type + Res.voie + Res.surface
         super.onViewCreated (view , savedInstanceState )
         binding.button.setOnClickListener {
             findNavController().navigate(R.id.action_fin_to_voie)
         }
+
     }
 
 }

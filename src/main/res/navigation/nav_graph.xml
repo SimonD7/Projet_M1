@@ -22,6 +22,7 @@
     <action
         android:id="@+id/action_voie_to_numero"
         app:destination="@id/numero_fragment" />
+
     </fragment>
     <fragment
         android:id="@+id/numero_fragment"
@@ -31,9 +32,9 @@
         <action
             android:id="@+id/action_numero_to_type"
             app:destination="@id/typeFragement" />
-        <action
-            android:id="@+id/action_numero_to_voie"
-            app:destination="@id/voie_fragment" />
+        <argument
+            android:name="numeroInResult"
+            app:argType="com.example.myapplication.result.Result" />
     </fragment>
     <fragment
         android:id="@+id/typeFragement"
@@ -43,9 +44,9 @@
         <action
             android:id="@+id/action_type_to_surface"
             app:destination="@id/surfaceFragement" />
-        <action
-            android:id="@+id/action_type_to_numero"
-            app:destination="@id/numero_fragment" />
+        <argument
+            android:name="numeroInResult"
+            app:argType="com.example.myapplication.result.Result" />
     </fragment>
     <fragment
         android:id="@+id/surfaceFragement"
@@ -55,9 +56,9 @@
         <action
             android:id="@+id/action_surface_to_piece"
             app:destination="@id/pieceFragement" />
-        <action
-            android:id="@+id/action_surface_to_type"
-            app:destination="@id/typeFragement" />
+        <argument
+            android:name="numeroInResult"
+            app:argType="com.example.myapplication.result.Result" />
     </fragment>
     <fragment
         android:id="@+id/pieceFragement"
@@ -67,9 +68,9 @@
         <action
             android:id="@+id/action_piece_to_fin"
             app:destination="@id/finFragement"/>
-        <action
-            android:id="@+id/action_piece_to_surface"
-            app:destination="@id/surfaceFragement" />
+        <argument
+            android:name="numeroInResult"
+            app:argType="com.example.myapplication.result.Result" />
     </fragment>
     <fragment
         android:id="@+id/finFragement"
@@ -79,5 +80,8 @@
         <action
             android:id="@+id/action_fin_to_voie"
             app:destination="@id/voie_fragment" />
+        <argument
+            android:name="numeroInResult"
+            app:argType="com.example.myapplication.result.Result" />
     </fragment>
 </navigation>

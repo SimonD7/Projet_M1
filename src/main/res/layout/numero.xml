@@ -30,7 +30,6 @@
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-
         />
 
     <Button
@@ -59,6 +58,7 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="53dp"
+            android:inputType="number"
             android:hint="saisissez le numero de l'appartement " />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

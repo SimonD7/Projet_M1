@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">sime/sd application</string>
+    <string-array name="types">
+        <item></item>
+        <item>Maison</item>
+        <item>Appartement</item>
+        <item>Dépendance</item>
+        <item>Local industriel.commercial ou assimilé</item>
+
+    </string-array>
 </resources>
