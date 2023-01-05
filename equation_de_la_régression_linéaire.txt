@@ -1,0 +1,13 @@
+Fonction pour la prédiction des maisons / appartements :
+
+A = [-1.53420471e+01, 3.40492965e+05, 1.10834777e+03, 2.35916834e+03, 8.60752762e+01, 6.63519570e+05, 1.20224955e+06]
+B = -60074359.051963925
+
+if type_local == 'Maison':
+    type_local = 0
+if type_local == 'Appartement':
+    type_local = 1
+
+def estimation(adresse_numero, type_local, surface_reelle_bati, nombre_pieces_principales, surface_terrain, longitude, latitude, A, B):
+    f= B + A[0] + A[1]*adresse_numero+A[2]*type_local+A[3]*surface_reelle_bati+A[4]*nombre_pieces_principales+A[5]*surface_terrain+A[6]*longitude+A[7]*latitude
+    return f
