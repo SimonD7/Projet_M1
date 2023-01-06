@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 
@@ -34,9 +35,14 @@ class  PieceFragement:Fragment(){
     override fun onViewCreated ( view : View , savedInstanceState : Bundle ?) {
         super.onViewCreated (view , savedInstanceState )
         binding.button3.setOnClickListener {
-            Res.Piece = binding.text.text.toString()
-            val bundle = bundleOf("Result" to Res)
-            findNavController().navigate(R.id.action_piece_to_fin,bundle )
+            if(binding.text.text.toString().isEmpty()  ) {
+                Toast.makeText(context,"il faut remplir tous les champs", Toast.LENGTH_LONG).show()
+
+            } else {
+                Res.Piece = binding.text.text.toString().toInt()
+                val bundle = bundleOf("Result" to Res)
+                findNavController().navigate(R.id.action_piece_to_fin, bundle)
+            }
         }
         binding.button2.setOnClickListener {
             activity?.onBackPressed()

@@ -4,8 +4,7 @@
         <item></item>
         <item>Maison</item>
         <item>Appartement</item>
-        <item>Dépendance</item>
-        <item>Local industriel.commercial ou assimilé</item>
-
     </string-array>
+    <string name="result">Result: %1$.2f</string>
+
 </resources>

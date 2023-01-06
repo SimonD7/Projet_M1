@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -36,12 +37,15 @@ class  numeroFragement:Fragment(){
 
 
         binding.button3.setOnClickListener {
-            Res.numero = binding.text.text.toString()
-            val bundle = bundleOf("Result" to Res)
-            if(Res.numero!!.toInt() <= 0 ){
-                binding.button3.setBackgroundColor(5)
+            if(binding.text.text.toString().isEmpty()  ) {
+                Toast.makeText(context,"il faut remplir tous les champs", Toast.LENGTH_LONG).show()
+
+            } else {
+                Res.numero = binding.text.text.toString().toInt()
+                val bundle = bundleOf("Result" to Res)
+
+                findNavController().navigate(R.id.action_numero_to_type, bundle)
             }
-            findNavController().navigate(R.id.action_numero_to_type,bundle )
         }
         binding.button2.setOnClickListener {
             activity?.onBackPressed()

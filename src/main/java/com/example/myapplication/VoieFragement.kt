@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.VoieBinding
 import com.example.myapplication.result.Result
+
+
 
 
 class  VoieFragement:Fragment(){
@@ -26,10 +30,29 @@ class  VoieFragement:Fragment(){
     }
     override fun onViewCreated ( view : View , savedInstanceState : Bundle ?) {
         super.onViewCreated (view , savedInstanceState )
+
+
+
+
+
+
         binding.button3.setOnClickListener {
-            val voie_name = Result(binding.text.text.toString(),null,null,null,null)
-            val bundle = bundleOf("Result" to voie_name)
-            findNavController().navigate(R.id.action_voie_to_numero,bundle )
+            if(binding.text1.text.toString().isEmpty() || binding.text2.text.toString().isEmpty() ) {
+                Toast.makeText(context,"il faut remplir tous les champs",Toast.LENGTH_LONG).show()
+
+            } else {
+                val voie_name = Result(
+                    binding.text1.text.toString().toDouble(),
+                    binding.text2.text.toString().toDouble(),
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                )
+                val bundle = bundleOf("Result" to voie_name)
+                findNavController().navigate(R.id.action_voie_to_numero, bundle)
+            }
         }
 
     }

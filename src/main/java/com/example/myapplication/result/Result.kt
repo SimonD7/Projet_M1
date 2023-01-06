@@ -5,10 +5,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class Result(
-    var voie: String?,
-    var numero: String?,
+    var longitude: Double?,
+    var latitude: Double?,
+    var numero: Int?,
     var type: String?,
-    var surface: String?,
-    var Piece: String?
+    var surfacet: Int?,
+    var Piece: Int?,
+    var surfaceb: Int?
 ) : Parcelable
 

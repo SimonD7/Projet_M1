@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 
@@ -35,9 +36,15 @@ class  SurfaceFragement:Fragment(){
     override fun onViewCreated ( view : View , savedInstanceState : Bundle ?) {
         super.onViewCreated (view , savedInstanceState )
         binding.button3.setOnClickListener {
-            Res.surface = binding.text.text.toString()
-            val bundle = bundleOf("Result" to Res)
-            findNavController().navigate(R.id.action_surface_to_piece,bundle )
+            if(binding.text.text.toString().isEmpty() || binding.text2.text.toString().isEmpty() ) {
+                Toast.makeText(context,"il faut remplir tous les champs", Toast.LENGTH_LONG).show()
+
+            } else {
+                Res.surfaceb = binding.text.text.toString().toInt()
+                Res.surfacet = binding.text2.text.toString().toInt()
+                val bundle = bundleOf("Result" to Res)
+                findNavController().navigate(R.id.action_surface_to_piece, bundle)
+            }
         }
         binding.button2.setOnClickListener {
             activity?.onBackPressed()

@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.StartBinding
-import com.example.myapplication.result.Result
 
 
 class StartFragment:Fragment(){
