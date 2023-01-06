@@ -37,10 +37,16 @@ class  numeroFragement:Fragment(){
 
 
         binding.button3.setOnClickListener {
+            /**
+             * verifier si les  champs sons bien remplis
+             */
             if(binding.text.text.toString().isEmpty()  ) {
                 Toast.makeText(context,"il faut remplir tous les champs", Toast.LENGTH_LONG).show()
 
             } else {
+                /**
+                 * stocker les donne dans notre Result pour le passer on argument aux autres fragements
+                 */
                 Res.numero = binding.text.text.toString().toInt()
                 val bundle = bundleOf("Result" to Res)
 

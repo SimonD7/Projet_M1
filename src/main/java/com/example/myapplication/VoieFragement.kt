@@ -13,7 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.VoieBinding
 import com.example.myapplication.result.Result
 
-
+/**
+ * voici notre premier fragement de collecte de donnes .
+ */
 
 
 class  VoieFragement:Fragment(){
@@ -37,10 +39,18 @@ class  VoieFragement:Fragment(){
 
 
         binding.button3.setOnClickListener {
+
+            /**
+             * verifier si les deux champs sons bien remplis
+             */
             if(binding.text1.text.toString().isEmpty() || binding.text2.text.toString().isEmpty() ) {
+
                 Toast.makeText(context,"il faut remplir tous les champs",Toast.LENGTH_LONG).show()
 
             } else {
+                /**
+                 * stocker les donne dans notre Result pour le passer on argument aux autres fragements
+                 */
                 val voie_name = Result(
                     binding.text1.text.toString().toDouble(),
                     binding.text2.text.toString().toDouble(),
@@ -50,6 +60,7 @@ class  VoieFragement:Fragment(){
                     null,
                     null
                 )
+
                 val bundle = bundleOf("Result" to voie_name)
                 findNavController().navigate(R.id.action_voie_to_numero, bundle)
             }

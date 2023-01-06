@@ -36,10 +36,16 @@ class  SurfaceFragement:Fragment(){
     override fun onViewCreated ( view : View , savedInstanceState : Bundle ?) {
         super.onViewCreated (view , savedInstanceState )
         binding.button3.setOnClickListener {
+            /**
+             * verifier si les deux champs sons bien remplis
+             */
             if(binding.text.text.toString().isEmpty() || binding.text2.text.toString().isEmpty() ) {
                 Toast.makeText(context,"il faut remplir tous les champs", Toast.LENGTH_LONG).show()
 
             } else {
+                /**
+                 * stocker les donne dans notre Result pour le passer on argument aux autres fragements
+                 */
                 Res.surfaceb = binding.text.text.toString().toInt()
                 Res.surfacet = binding.text2.text.toString().toInt()
                 val bundle = bundleOf("Result" to Res)

@@ -13,6 +13,12 @@ import com.example.myapplication.result.Result
 import com.example.myapplication.result.ResultRep
 import com.example.myapplication.view.viewModel
 
+/**
+ * ce fragment est le dernier fragement de notre application qui
+ *         1 . recupere les donnes collecter par les fragement sous forme dun Result
+ *         2 . envoi les donnes collecter aux view model
+ *         3 . recuperer le retour de notre backend et l'afficher
+ */
 
 class  ResultFragement:Fragment(){
     private lateinit var binding :ResultBinding
@@ -53,6 +59,9 @@ class  ResultFragement:Fragment(){
 
 
         binding.button.setOnClickListener {
+            /**
+             * refaire un autre test ?
+             */
             findNavController().navigate(R.id.action_fin_to_voie)
         }
 

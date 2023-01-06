@@ -9,7 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.StartBinding
 
-
+/**
+ * ce fragement represente le premier fragement de notre application et qui
+ * emmene vers les autre fragement qui collectent les donnes
+ */
 class StartFragment:Fragment(){
     private lateinit var binding : StartBinding
 
